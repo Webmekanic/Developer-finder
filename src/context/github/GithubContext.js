@@ -9,12 +9,13 @@ const CLIENT_SECRET = process.env.REACT_APP_GITHUB_CLIENT_SECRET
 export const GithubProvider = ({ children }) => {
   const initialState = {
     users: [],
-    loading: true,
+    loading: false,
   }
 
   const [state, dispatch] = useReducer(githubReducer, initialState)
 
   const fetchUsers = async () => {
+    setLoading()
     const response = await fetch(
       `https://api.github.com/users?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
@@ -24,6 +25,9 @@ export const GithubProvider = ({ children }) => {
       payload: data,
     })
   }
+
+  // SET_LOADING
+  const setLoading = () => dispatch({ type: "SET_LOADING" })
 
   return (
     <GithubContext.Provider
