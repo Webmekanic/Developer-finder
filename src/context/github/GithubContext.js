@@ -31,7 +31,7 @@ export const GithubProvider = ({ children }) => {
     })
     const { items } = await response.json()
 
-    // console.log(items)
+    console.log(items)
 
     dispatch({
       type: "GET_USERS",
@@ -64,6 +64,8 @@ export const GithubProvider = ({ children }) => {
   // Get User repos
   const getUserRepos = async (login) => {
     setLoading()
+
+    console.log(login)
 
     const params = new URLSearchParams({
       sort: "created",
