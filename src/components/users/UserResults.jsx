@@ -3,7 +3,7 @@ import Spinner from "../layouts/spinner"
 import UserItem from "./UserItem"
 import GithubContext from "../../context/github/GithubContext"
 
-function UserResults() {
+const UserResults = () => {
   const { users, loading } = useContext(GithubContext)
 
   if (!loading) {

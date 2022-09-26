@@ -1,6 +1,6 @@
 import React from "react"
 
-function About() {
+const About = () => {
   return (
     <div>
       <h1 className="text-6xl mb-4">Developer Finder</h1>

@@ -10,14 +10,13 @@ import Footer from "./components/layouts/Footer"
 import { GithubProvider } from "./context/github/GithubContext"
 import { AlertProvider } from "./context/alert/AlertContext"
 
-function App() {
+const App = () => {
   return (
     <GithubProvider>
       <AlertProvider>
         <Router>
           <div className="flex flex-col justify-between h-screen">
             <Navbar />
-
             <main className="container mx-auto px-3 pb-12">
               <Alert />
               <Routes>

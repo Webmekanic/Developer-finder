@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import RepoItem from "./RepoItem"
 
-function RepoList({ repos }) {
+const RepoList = ({ repos }) => {
   return (
     <div className="rounded-lg shadow-lg card bg-base-100">
       <div className="card-body">
